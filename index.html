@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plate Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main>
+      <form class="form">
+        <div>
+          <div class="weight-input-container">
+            <h2>Enter weight</h2>
+            <input
+              type="number"
+              id="work-weight"
+              value="100"
+              min="35"
+              max="500"
+            />
+          </div>
+
+          <button type="submit" id="submit-btn">
+            <i class="fa-solid fa-calculator"></i>
+            Calculate
+          </button>
+        </div>
+
+        <div class="result">
+          <span class="lbs">32.5 lbs</span><br />on each side
+        </div>
+
+        <div class="bar-container">
+          <h2>Change bar type</h2>
+          <div class="radio-container">
+            <input type="radio" id="olympic" value="45" name="barbell" />
+            <label for="olympic">45 lbs</label>
+
+            <input type="radio" id="womens" value="35" name="barbell" checked />
+            <label for="womens">35 lbs</label>
+
+            <input type="radio" id="standard" value="20" name="barbell" />
+            <label for="standard">20 lbs</label>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
