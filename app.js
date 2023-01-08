@@ -7,14 +7,21 @@
 // ];
 
 const form = document.querySelector(".form");
-const weightInput = document.getElementById("work-weight");
+const workWeight = document.getElementById("work-weight");
 const submitBtn = document.getElementById("submit-btn");
 const result = document.querySelector(".result");
 const barbells = document.getElementsByName("barbell");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  const workWeight = weightInput.value;
+  calculate();
+});
+
+barbells.forEach((barbell) => {
+  barbell.addEventListener("click", calculate);
+});
+
+function calculate() {
   let barWeight;
   // check which bar is selected and assign bar weight that value
   for (let i = 0; i < barbells.length; i++) {
@@ -22,6 +29,6 @@ form.addEventListener("submit", (event) => {
       barWeight = barbells[i].value;
     }
   }
-  const weightPerSide = (workWeight - barWeight) / 2;
+  const weightPerSide = (workWeight.value - barWeight) / 2;
   result.innerHTML = `<span class="lbs">${weightPerSide} lbs</span><br />on each side`;
-});
+}
